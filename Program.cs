@@ -150,7 +150,8 @@ namespace TFS
             foreach (var workItem in workItems)
             {
                 // для объектов task нужно проверить на наличие часов
-                if(workItem.Fields["System.WorkItemType"].ToString() == "Task")
+                if(workItem.Fields["System.WorkItemType"].ToString() == "Task" &&
+                    workItem.Fields["System.State"].ToString() != "Proposed")
                 {
                     string remainingWork = workItem.Fields["Microsoft.VSTS.Scheduling.RemainingWork"].ToString();
                     string originalEstimate = workItem.Fields["Microsoft.VSTS.Scheduling.OriginalEstimate"].ToString();
