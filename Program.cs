@@ -103,7 +103,7 @@ namespace TFS
                 return "да";
             }
 
-            return answer;
+            return answer.ToLower();
         }
 
         public void Run()
